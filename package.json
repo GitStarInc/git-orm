@@ -1,0 +1,12 @@
+{
+  "name": "gitstar-http",
+  "version": "0.0.1",
+  "description": "API to access nodegit-http requests",
+  "dependencies": {
+    "request"      : "^3.18.1",
+    "validator"    : "^2.44.0"
+  },
+  "author": "Oleg Pesok <olegpesok@gmail.com>",
+  "main": "index.js",
+  "license": "MIT"
+}
