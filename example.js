@@ -12,21 +12,20 @@ var repo = new Gitstar(
 
 repo.getRefs(function(data) {
     console.log(data);
-    var json = JSON.parse(data);
-    for (var i=0; i < json.length; i++) {
-        if (json[i].object) {
-            switch(json[i].object.type) {
+    for (var i=0; i < data.length; i++) {
+        if (data[i].object) {
+            switch(data[i].object.type) {
             case 'commit':
-                repo.getCommit(json[i].object.sha);
+                repo.getCommit(data[i].object.sha);
                 break;
             case 'blob':
-                repo.getBlob(json[i].object.sha);
+                repo.getBlob(data[i].object.sha);
                 break;
             case 'tag':
-                repo.getTag(json[i].object.sha);
+                repo.getTag(data[i].object.sha);
                 break;
             case 'tree':
-                repo.getTree(json[i].object.sha);
+                repo.getTree(data[i].object.sha);
                 break;
             default:
                 break;

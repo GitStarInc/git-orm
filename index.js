@@ -49,19 +49,24 @@ module.exports = function (options) {
                 headers: { 'User-Agent': 'Gitstar-HTTP' }
             },
             function (error, response, body) {
-            if (!error && response.statusCode == 200) {
-                if (cb) {
-                    cb(body);
-                } else if (options.cb) {
-                    options.cb(body);
+                if (!error && response.statusCode == 200) {
+                    try {
+                        var jsonData = JSON.parse(body);
+                        if (cb) {
+                            cb(jsonData);
+                        } else if (options.cb) {
+                            options.cb(jsonData);
+                        }
+                        this.data = jsonData;
+                    } catch (e) {
+                        throw new Error('Bad data recieved');
+                    }
+                } else {
+                    throw new Error(
+                        'Could not retrieve repo: ' + response.statusCode + '\n' +
+                        'URL: ' + url);
                 }
-                this.data = body;
-            } else {
-                throw new Error(
-                    'Could not retrieve repo: ' + response.statusCode + '\n' +
-                    'URL: ' + url);
-            }
-        });
+            });
     }
 
     function isValidSha(sha) {
