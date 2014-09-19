@@ -1,8 +1,8 @@
 "use strict";
 
-var Gitstar = require('./index');
+var GitOrm = require('./index');
 
-var repo = new Gitstar(
+var repo = new GitOrm(
         {
             url: "https://api.github.com",
             repo: "node",
