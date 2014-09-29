@@ -1,12 +1,39 @@
 {
-  "name": "gitstar-http",
+  "name": "git-orm",
   "version": "0.0.1",
-  "description": "API to access nodegit-http requests",
-  "dependencies": {
-    "request"      : "^3.18.1",
-    "validator"    : "^2.44.0"
+  "description": "Read-only ORM for git",
+  "scripts": {
+    "test": "mocha"
   },
-  "author": "Oleg Pesok <olegpesok@gmail.com>",
-  "main": "index.js",
+  "repository" : {
+    "type": "git",
+    "url": "git@github.com:GitStarInc/git-orm.git"
+  },
+  "bugs" : {
+    "url": "https://github.com/GitStarInc/git-orm/issues"
+  },
+  "homepage" : "https://github.com/GitStarInc/git-orm",
+  "keywords": [
+    "git",
+    "rest",
+    "http",
+    "orm"
+  ],
+  "dependencies": {
+    "underscore" : "^1.6.0",
+    "validator"  : "^3.19.0",
+    "adt"        : "^0.7.2",
+    "util-is"    : "^0.1.0"
+  },
+  "devDependencies": {
+    "underscore" : "^1.6.0",
+    "validator"  : "^3.19.0",
+    "adt"        : "^0.7.2",
+    "util-is"    : "^0.1.0",
+    "git-orm-nodegit-http" : "GitStarInc/git-orm-nodegit-http",
+    "should"     : "^4.0.4",
+    "mocha"      : "^1.21.4"
+  },
+  "author": "GitStar Inc.",
   "license": "MIT"
 }
