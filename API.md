@@ -11,6 +11,8 @@
   * [repo.getTag(sha, cb)](#Repo#getTag)
 * [class: Ref](#Ref)
   * [new Ref(obj)](#new_Ref)
+* [class: Blob](#Blob)
+  * [new Blob(obj)](#new_Blob)
 * [class: TreeEntry](#TreeEntry)
   * [new TreeEntry(obj)](#new_TreeEntry)
 * [class: Tree](#Tree)
@@ -102,9 +104,30 @@ Git reference.
 
 **Properties**
 
-- name `String` - Refernce name
-- type <code>[Type](#Type)</code> - Refernce type
-- sha `String` - Refernce SHA1 hash
+- name `String` - Reference name
+- type <code>[Type](#Type)</code> - Reference type
+- sha `String` - Reference SHA1 hash
+
+<a name="Blob"></a>
+###class: Blob
+**Members**
+
+* [class: Blob](#Blob)
+  * [new Blob(obj)](#new_Blob)
+
+<a name="new_Blob"></a>
+####new Blob(obj)
+Git blob.
+
+**Params**
+
+- obj `Object` | <code>[Blob](#Blob)</code>  
+
+**Properties**
+
+- size `Number` - Size of the returned content
+- content `String` - Contents of the blob
+- sha `String` - Reference SHA1 hash
 
 <a name="TreeEntry"></a>
 #class: TreeEntry
